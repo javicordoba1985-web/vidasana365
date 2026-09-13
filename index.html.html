@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vida Sana 365 | Hábitos saludables, recetas, ejercicio y bienestar</title>
+  <meta name="description" content="Recetas saludables, menús equilibrados, ejercicio, bienestar y recursos digitales para mejorar tus hábitos de forma práctica.">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6331273756028437"
+       crossorigin="anonymous"></script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7fbf9;
+      color: #163b34;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid #e7efeb;
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+    .navlinks {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: .93rem;
+    }
+    .navlinks a {
+      text-decoration: none;
+      color: #335f56;
+      font-weight: 700;
+    }
+    .hero {
+      padding: 76px 0 54px;
+      background: linear-gradient(135deg, #eaf6f0 0%, #f9fcfa 55%, #eef7f4 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: #dff1e8;
+      color: #24594f;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: .82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    h1 {
+      font-size: clamp(2.3rem, 6vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 18px 0;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: #4d6f67;
+      max-width: 680px;
+    }
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 0;
+    }
+    .btn-primary { background: #1f5b50; color: #fff; }
+    .btn-secondary { background: #fff; color: #1f5b50; border: 1px solid #dce9e4; }
+
+    .hero-card, .card {
+      background: #fff;
+      border: 1px solid #e3eee9;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(28, 74, 64, .07);
+    }
+    .hero-card {
+      box-shadow: 0 20px 50px rgba(28, 74, 64, .10);
+    }
+    .hero-card h3, .card h3 { margin-top: 0; }
+    .checks {
+      margin: 0;
+      padding-left: 20px;
+      color: #476b63;
+    }
+
+    section { padding: 68px 0; }
+    .soft { background: #f1f8f5; }
+    .section-title {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 34px;
+    }
+    .section-title h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin: 0 0 10px;
+      letter-spacing: -.03em;
+    }
+    .section-title p { margin: 0; color: #627d76; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      padding: 0;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-card .content { padding: 22px; }
+    .photo-card ul, .photo-card ol {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .menu-table, .exercise-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(28, 74, 64, .06);
+    }
+    .menu-table th, .menu-table td,
+    .exercise-table th, .exercise-table td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #e9f0ed;
+      vertical-align: middle;
+    }
+    .menu-table th, .exercise-table th {
+      background: #e8f4ef;
+      color: #214d44;
+    }
+    .exercise-thumb {
+      width: 115px;
+      height: 78px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+    .table-wrap { overflow-x: auto; }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+    }
+    .product-card p { color: #5d7771; }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .testimonial {
+      background: #fff;
+      border: 1px solid #e3ece8;
+      border-radius: 20px;
+      padding: 22px;
+    }
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e7f1ed;
+    }
+    .person strong { display: block; }
+    .person span { color: #718880; font-size: .9rem; }
+    .quote { color: #45675f; margin: 0; }
+    .notice {
+      margin-top: 18px;
+      font-size: .92rem;
+      color: #6f837d;
+      text-align: center;
+    }
+    .health-note {
+      background: #fff8e8;
+      border: 1px solid #f0dfac;
+      color: #665523;
+      padding: 18px;
+      border-radius: 16px;
+      margin-top: 24px;
+      font-size: .95rem;
+    }
+    .footer {
+      background: #173f37;
+      color: #e8f3ef;
+      padding: 36px 0;
+      margin-top: 40px;
+    }
+    .footer p {
+      margin: 7px 0;
+      color: #bfd2cc;
+      font-size: .93rem;
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid, .grid-3, .grid-2, .testimonials {
+        grid-template-columns: 1fr;
+      }
+      .nav {
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+      .hero { padding-top: 48px; }
+      .menu-table, .exercise-table { min-width: 760px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Vida Sana 365</div>
+      <nav class="navlinks">
+        <a href="#habitos">Hábitos</a>
+        <a href="#recetas">Recetas</a>
+        <a href="#menu">Menú saludable</a>
+        <a href="#ejercicio">Ejercicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#opiniones">Opiniones</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Bienestar práctico para el día a día</span>
+          <h1>Pequeños hábitos. Cambios que sí puedes mantener.</h1>
+          <p class="lead">
+            Recetas, ideas de menús equilibrados, ejercicio, organización y recursos digitales
+            para ayudarte a construir una rutina saludable de forma sencilla.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#recetas">Ver recetas</a>
+            <a class="btn btn-secondary" href="#productos">Ver productos</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>En esta web encontrarás</h3>
+          <ul class="checks">
+            <li>Recetas fáciles y equilibradas.</li>
+            <li>Ejemplo de menú semanal saludable.</li>
+            <li>Tabla de ejercicios con imágenes.</li>
+            <li>Consejos de bienestar y organización.</li>
+            <li>Planificadores y retos digitales.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="habitos">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Recomendaciones saludables</h2>
+          <p>Ideas generales para cuidar tus hábitos sin recurrir a cambios extremos.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>🥗 Alimentación variada</h3>
+            <p>Combina verduras, frutas, legumbres, cereales integrales, proteínas y grasas saludables a lo largo de la semana.</p>
+          </article>
+          <article class="card">
+            <h3>💧 Hidratación</h3>
+            <p>Ten agua a mano durante el día y ajusta la cantidad según actividad, calor y necesidades personales.</p>
+          </article>
+          <article class="card">
+            <h3>🚶 Muévete a diario</h3>
+            <p>Caminar, subir escaleras o realizar sesiones cortas de ejercicio también cuenta. La constancia es más importante que la perfección.</p>
+          </article>
+          <article class="card">
+            <h3>😴 Descanso</h3>
+            <p>Mantén horarios de sueño lo más regulares posible y reduce pantallas justo antes de dormir.</p>
+          </article>
+          <article class="card">
+            <h3>📅 Planificación</h3>
+            <p>Decidir con antelación algunas comidas y momentos de actividad física hace más fácil mantener una rutina.</p>
+          </article>
+          <article class="card">
+            <h3>🌿 Progreso realista</h3>
+            <p>Evita el “todo o nada”. Un pequeño hábito sostenible suele ser más útil que un cambio drástico de pocos días.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="recetas" class="soft">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Recetas saludables y fáciles</h2>
+          <p>Ideas sencillas para comidas cotidianas, con ingredientes fáciles de encontrar.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card photo-card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80" alt="Bol saludable con verduras y cereales">
+            <div class="content">
+              <h3>Bol de quinoa, aguacate y verduras</h3>
+              <p><strong>Ingredientes:</strong> quinoa cocida, tomate, pepino, aguacate, zanahoria, garbanzos y limón.</p>
+              <ol>
+                <li>Coloca la quinoa como base.</li>
+                <li>Añade las verduras cortadas y los garbanzos.</li>
+                <li>Termina con aguacate, limón y un poco de aceite de oliva.</li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="card photo-card">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1000&q=80" alt="Salmón con verduras">
+            <div class="content">
+              <h3>Salmón al horno con verduras</h3>
+              <p><strong>Ingredientes:</strong> salmón, calabacín, pimiento, cebolla, limón y especias.</p>
+              <ol>
+                <li>Coloca las verduras en una bandeja.</li>
+                <li>Añade el salmón y sazona.</li>
+                <li>Hornea hasta que el pescado esté cocinado y las verduras tiernas.</li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="card photo-card">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=80" alt="Ensalada variada saludable">
+            <div class="content">
+              <h3>Ensalada completa con pollo</h3>
+              <p><strong>Ingredientes:</strong> hojas verdes, tomate, pollo a la plancha, maíz, aguacate y semillas.</p>
+              <ol>
+                <li>Cocina el pollo a la plancha.</li>
+                <li>Mezcla las verduras en un bol.</li>
+                <li>Añade el pollo, aguacate y semillas al final.</li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="card photo-card">
+            <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=1000&q=80" alt="Desayuno de yogur, fruta y avena">
+            <div class="content">
+              <h3>Yogur con fruta, avena y semillas</h3>
+              <p><strong>Ingredientes:</strong> yogur natural, frutos rojos o plátano, avena, chía y nueces.</p>
+              <ol>
+                <li>Sirve el yogur en un bol.</li>
+                <li>Añade la fruta troceada.</li>
+                <li>Completa con avena, chía y unas pocas nueces.</li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="card photo-card">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1000&q=80" alt="Verduras variadas">
+            <div class="content">
+              <h3>Verduras asadas con huevo</h3>
+              <p><strong>Ingredientes:</strong> brócoli, calabacín, cebolla, pimiento y huevo.</p>
+              <ol>
+                <li>Asa las verduras con especias.</li>
+                <li>Cocina un huevo al gusto.</li>
+                <li>Sirve todo junto como plato completo.</li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="card photo-card">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1000&q=80" alt="Pasta con verduras">
+            <div class="content">
+              <h3>Pasta integral con tomate y verduras</h3>
+              <p><strong>Ingredientes:</strong> pasta integral, tomate triturado, champiñones, calabacín y cebolla.</p>
+              <ol>
+                <li>Hierve la pasta.</li>
+                <li>Sofríe suavemente las verduras.</li>
+                <li>Añade tomate y mezcla con la pasta.</li>
+              </ol>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Ejemplo de menú semanal equilibrado</h2>
+          <p>Una propuesta general para inspirarte. Puedes adaptar cantidades e ingredientes a tus necesidades y preferencias.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="menu-table">
+            <thead>
+              <tr>
+                <th>Día</th>
+                <th>Desayuno</th>
+                <th>Comida</th>
+                <th>Merienda</th>
+                <th>Cena</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Lunes</td><td>Tostada integral con aguacate + fruta</td><td>Quinoa con pollo y verduras</td><td>Yogur natural con fruta</td><td>Salmón con verduras</td></tr>
+              <tr><td>Martes</td><td>Avena con yogur y plátano</td><td>Lentejas con verduras</td><td>Fruta + puñado pequeño de frutos secos</td><td>Tortilla con ensalada</td></tr>
+              <tr><td>Miércoles</td><td>Tostada integral con tomate y queso fresco</td><td>Pasta integral con verduras y pollo</td><td>Yogur con fruta</td><td>Pescado blanco con patata y ensalada</td></tr>
+              <tr><td>Jueves</td><td>Yogur, avena y frutos rojos</td><td>Arroz integral con garbanzos y verduras</td><td>Fruta</td><td>Crema de verduras + huevo</td></tr>
+              <tr><td>Viernes</td><td>Tostada con aguacate y huevo</td><td>Ensalada completa con pollo</td><td>Yogur + fruta</td><td>Pizza casera con base integral y verduras</td></tr>
+              <tr><td>Sábado</td><td>Tortitas de avena con fruta</td><td>Arroz con pescado y verduras</td><td>Fruta + yogur</td><td>Wrap integral de pollo y verduras</td></tr>
+              <tr><td>Domingo</td><td>Pan integral con tomate + fruta</td><td>Legumbres con verduras</td><td>Yogur natural</td><td>Ensalada + tortilla francesa</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="health-note">
+          Este menú es orientativo y no sustituye una dieta personalizada. Si tienes una condición médica, alergias, embarazo,
+          necesidades nutricionales especiales o buscas un cambio de peso importante, consulta con un profesional sanitario o dietista-nutricionista.
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio" class="soft">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Tabla de ejercicios con imágenes</h2>
+          <p>Rutina básica para adultos sanos. Empieza con intensidad moderada y prioriza una técnica cómoda y segura.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="exercise-table">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Ejercicio</th>
+                <th>Series</th>
+                <th>Repeticiones / tiempo</th>
+                <th>Consejo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img class="exercise-thumb" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=500&q=80" alt="Persona realizando sentadillas"></td>
+                <td><strong>Sentadillas</strong></td>
+                <td>3</td>
+                <td>10–15 repeticiones</td>
+                <td>Mantén el pecho elevado y baja solo hasta donde te resulte cómodo.</td>
+              </tr>
+              <tr>
+                <td><img class="exercise-thumb" src="https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&w=500&q=80" alt="Persona haciendo flexiones"></td>
+                <td><strong>Flexiones</strong></td>
+                <td>3</td>
+                <td>6–12 repeticiones</td>
+                <td>Puedes apoyar las rodillas o hacerlas contra una pared si estás empezando.</td>
+              </tr>
+              <tr>
+                <td><img class="exercise-thumb" src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=500&q=80" alt="Persona realizando plancha"></td>
+                <td><strong>Plancha</strong></td>
+                <td>3</td>
+                <td>20–40 segundos</td>
+                <td>Mantén abdomen activo y evita hundir la zona lumbar.</td>
+              </tr>
+              <tr>
+                <td><img class="exercise-thumb" src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=500&q=80" alt="Persona caminando o corriendo"></td>
+                <td><strong>Caminata rápida</strong></td>
+                <td>1</td>
+                <td>20–30 minutos</td>
+                <td>Busca un ritmo que eleve la respiración pero permita mantener una conversación breve.</td>
+              </tr>
+              <tr>
+                <td><img class="exercise-thumb" src="https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?auto=format&fit=crop&w=500&q=80" alt="Persona realizando zancadas"></td>
+                <td><strong>Zancadas</strong></td>
+                <td>3</td>
+                <td>8–12 por pierna</td>
+                <td>Da un paso estable y mantén la rodilla alineada con el pie.</td>
+              </tr>
+              <tr>
+                <td><img class="exercise-thumb" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=500&q=80" alt="Persona realizando ejercicio físico"></td>
+                <td><strong>Puente de glúteos</strong></td>
+                <td>3</td>
+                <td>12–15 repeticiones</td>
+                <td>Aprieta glúteos al subir sin arquear demasiado la espalda.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="health-note">
+          Si tienes dolor, una lesión, enfermedad cardiovascular, problemas articulares o llevas mucho tiempo sin hacer ejercicio,
+          consulta con un profesional antes de empezar una nueva rutina. Detén el ejercicio si aparece dolor intenso, mareo o dificultad respiratoria inusual.
+        </div>
+      </div>
+    </section>
+
+    <section id="productos">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Mis productos digitales</h2>
+          <p>Consulta la información completa de cada producto directamente en Hotmart.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card product-card">
+            <div>
+              <h3>Reto saludable de 30 días</h3>
+              <p>Una propuesta guiada para crear rutinas más saludables paso a paso.</p>
+            </div>
+            <a class="btn btn-primary" href="https://go.hotmart.com/M107450219F?dp=1" target="_blank" rel="noopener noreferrer">Ver en Hotmart</a>
+          </article>
+
+          <article class="card product-card">
+            <div>
+              <h3>Kit Planificador Saludable</h3>
+              <p>Plantillas y recursos para organizar hábitos, objetivos y rutinas de bienestar.</p>
+            </div>
+            <a class="btn btn-primary" href="https://go.hotmart.com/O107403228Q?dp=1" target="_blank" rel="noopener noreferrer">Ver en Hotmart</a>
+          </article>
+
+          <article class="card product-card">
+            <div>
+              <h3>Pack Vida Saludable</h3>
+              <p>Recursos digitales para acompañar tu organización y mejorar tus hábitos diarios.</p>
+            </div>
+            <a class="btn btn-primary" href="https://go.hotmart.com/V107256515W?dp=1" target="_blank" rel="noopener noreferrer">Ver en Hotmart</a>
+          </article>
+
+          <article class="card product-card">
+            <div>
+              <h3>Producto digital saludable</h3>
+              <p>Contenido práctico enfocado en bienestar, organización y hábitos saludables.</p>
+            </div>
+            <a class="btn btn-primary" href="https://go.hotmart.com/D107505681L?dp=1" target="_blank" rel="noopener noreferrer">Ver en Hotmart</a>
+          </article>
+
+          <article class="card product-card">
+            <div>
+              <h3>Recurso adicional</h3>
+              <p>Consulta este producto adicional y revisa sus contenidos directamente en Hotmart.</p>
+            </div>
+            <a class="btn btn-primary" href="https://go.hotmart.com/X102939866D" target="_blank" rel="noopener noreferrer">Ver en Hotmart</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="opiniones" class="soft">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Opiniones de ejemplo</h2>
+          <p>Estas tarjetas son demostrativas. Sustituye los textos por opiniones reales y autorizadas de clientes antes de presentarlas como testimonios auténticos.</p>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial">
+            <div class="person">
+              <img class="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Imagen ilustrativa de una persona">
+              <div>
+                <strong>María, 39 años</strong>
+                <span>Opinión de ejemplo</span>
+              </div>
+            </div>
+            <p class="quote">“Me ayudó a organizar mejor mis rutinas y a tener todo más claro durante la semana.”</p>
+          </article>
+
+          <article class="testimonial">
+            <div class="person">
+              <img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Imagen ilustrativa de una persona">
+              <div>
+                <strong>Carlos, 44 años</strong>
+                <span>Opinión de ejemplo</span>
+              </div>
+            </div>
+            <p class="quote">“Lo que más me gustó fue poder empezar poco a poco, sin complicarme demasiado.”</p>
+          </article>
+
+          <article class="testimonial">
+            <div class="person">
+              <img class="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Imagen ilustrativa de una persona">
+              <div>
+                <strong>Lucía, 35 años</strong>
+                <span>Opinión de ejemplo</span>
+              </div>
+            </div>
+            <p class="quote">“El formato es sencillo y me resultó útil para mantener mis objetivos visibles cada día.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <strong>Vida Sana 365</strong>
+      <p>Contenido informativo y recursos digitales de bienestar.</p>
+      <p>Este sitio no sustituye el asesoramiento médico, nutricional o deportivo profesional.</p>
+      <p>© 2026 Vida Sana 365</p>
+    </div>
+  </footer>
+</body>
+</html>
